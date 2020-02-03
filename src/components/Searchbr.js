@@ -1,4 +1,4 @@
-import React from 'React'
+import React from 'react'
 import { FaSearch } from 'react-icons/fa'
 import { withRouter } from 'react-router-dom'
 
