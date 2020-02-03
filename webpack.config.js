@@ -1,3 +1,4 @@
+require('dotenv').config()
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -41,6 +42,10 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from: './src/assets', to: 'assets' }
+    ]),
+    new webpack.EnvironmentPlugin([
+      'MY_API_KEY'
+      //ANY OTHER API KEYS
     ])
   ]
 }
