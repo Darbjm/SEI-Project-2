@@ -44,10 +44,10 @@ class Home extends React.Component {
         <div className="hero-body">
           <div className="container">
             <Searchbr />
-            <div className="title is-1 has-text-centered">
+            <div className="title is-1 has-text-centered homebooks">
               {this.state.volumeInfo.map((image, i) => (
                 <Link key={i} to={`/books/1/results/${this.state.id[i].id}`} >
-                  <img key={i} src={image.thumbnail}/>
+                  <img key={i} src={image.thumbnail} className='homebooks'/>
                 </Link>
               )  
               )}
