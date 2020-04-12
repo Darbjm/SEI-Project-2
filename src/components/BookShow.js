@@ -23,17 +23,25 @@ class BookShow extends React.Component {
     if (!this.state.bookinfo) return
     const image = this.state.image.thumbnail
     return (
-      <section className="hero is-fullheight-with-navbar">
-        <div className="hero-body">
-          <Searchbr />
-          <div>
-            <h1>{this.state.bookinfo.title}</h1>
-            <h2>{this.state.bookinfo.subtitle}</h2>
-            <p>{this.state.bookinfo.authors}</p>
-            <img src={image} />
-            <p>{this.state.bookinfo.publisher}</p>
-            <p>{this.state.bookinfo.description}</p>
-            <p>Page Count: {this.state.bookinfo.pageCount}</p>
+      <section className='hero is-fullheight-with-navbar'>
+        <div className='hero-body'>
+          <div className='bookShow'>
+            <Searchbr />
+            <div className='bookContent'>
+              <div className='bookInfo'>
+                <div className='all'>
+                  <img src={image} />
+                  <div className='text'>
+                    <h1>{this.state.bookinfo.title}</h1>
+                    <h2>{this.state.bookinfo.subtitle}</h2>
+                    <h2>{this.state.bookinfo.authors}</h2>
+                    <p>{this.state.bookinfo.publisher}</p>
+                    <p>{this.state.bookinfo.description}</p>
+                    <h3>Page Count: {this.state.bookinfo.pageCount}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -43,11 +51,3 @@ class BookShow extends React.Component {
 }
 
 export default BookShow
-
-{/* <h1>{title}</h1>
-<p>{this.state.data.subtitle}</p>
-<p>{this.state.data.authors}</p>
-{this.img ? <img src={this.img}/> : ''}
-<p>{this.state.data.publisher}</p>
-<p>{this.state.data.description}</p>
-<p>{this.state.data.pageCount}</p> */}

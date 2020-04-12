@@ -12,11 +12,11 @@ class Home extends React.Component {
   }
 
   randomCats = [
-    'fiction',
+    'novels',
     'non-fiction',
-    'coding',
+    'software',
     'history',
-    'children',
+    'young-fiction',
     'travel'
   ]
   
@@ -40,11 +40,11 @@ class Home extends React.Component {
   render() {
     if (!this.state.volumeInfo) return null
     return (
-      <section className="hero is-fullheight-with-navbar">
-        <div className="hero-body">
-          <div className="container">
-            <Searchbr />
-            <div className="title is-1 has-text-centered homebooks">
+      <section className='hero is-fullheight-with-navbar'>
+        <div className='hero-body'>
+          <div className='container'>
+            <Searchbr history={this.props.history} />
+            <div className='display'>
               {this.state.volumeInfo.map((image, i) => (
                 <Link key={i} to={`/books/1/results/${this.state.id[i].id}`} >
                   <img key={i} src={image.thumbnail} className='homebooks'/>

@@ -1,6 +1,5 @@
 import React from 'react'
 import { FaSearch } from 'react-icons/fa'
-import { withRouter } from 'react-router-dom'
 
 class Searchbr extends React.Component {
   state = {
@@ -13,27 +12,25 @@ class Searchbr extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    this.props.history.push(`/books/${this.state.search}/results`)
+    const search = this.state.search
+    this.props.history.push(`/books/${search}/results`)
+    location.reload()
   }
 
   render() {
     return (
-      <div>
+      <div className='searchbar'>
         <form onSubmit={this.handleSubmit}>
-          {/* <select>
-            <option value="title">Title</option>
-            <option value="author">Author</option>
-            <option value="category">Category</option>
-          </select> */}
-          <div className="wrap">
-            <div className="search">
+          <div className='wrap'>
+            <div className='search'>
               <input 
-                type="text"
-                name="search" 
+                placeholder='search'
+                type='text'
+                name='search' 
                 onChange={this.handleChange}
-                className="searchTerm"
+                className='searchTerm'
               />
-              <button className="searchButton" type="submit"><FaSearch/></button>
+              <button className='searchButton' type='submit'><FaSearch/></button>
             </div>
           </div>
         </form>
@@ -42,4 +39,4 @@ class Searchbr extends React.Component {
   }
 }
 
-export default withRouter(Searchbr)
+export default Searchbr

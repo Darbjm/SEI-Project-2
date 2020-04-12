@@ -15,11 +15,11 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <main>
-          <Navbar />
+          <Navbar/>
           <Switch>
-            <Route path="/books/:search/results/:id" component={BookShow} />
-            <Route path="/books/:search/results" component={SearchResults} />
-            <Route exact path="/" component={Home} />
+            <Route path='/books/:search/results/:id' component={BookShow} />
+            <Route path='/books/:search/results' component={SearchResults} />
+            <Route exact path='/' component={Home} />
           </Switch>
         </main>
       </BrowserRouter>
