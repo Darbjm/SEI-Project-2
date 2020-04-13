@@ -10,15 +10,8 @@ class SearchResults extends React.Component {
     index: 0
   }
 
-  async componentDidMount() {
-    const search = this.props.match.params.search
-    try {
-      const res = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${search}&maxResults=40&startIndex=0`)
-      this.setState({ data: res.data.items })
-      this.setState({ search }) // Not sure why this is necessary
-    } catch (err) {
-      console.log(err)
-    }
+  componentDidMount() {
+    this.findBooks()
   }
 
   findBooks = async () => {
@@ -56,7 +49,7 @@ class SearchResults extends React.Component {
           <Searchbr history={this.props.history}/>
         </div>
         <div className='pages'>
-          {this.state.index ? (<div><a onClick={this.back}>Previous page</a> <a onClick={this.next}>Next page</a></div>) : <div><a onClick={this.next}>Next page</a></div>}
+          {this.state.index ? <div><a onClick={this.back}>Previous page</a> <a onClick={this.next}>Next page</a></div> : <div><a onClick={this.next}>Next page</a></div>}
         </div>
         <div className='results'>
           {this.state.data.map((book, i) => {

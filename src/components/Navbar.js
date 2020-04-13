@@ -13,10 +13,6 @@ class Navbar extends React.Component {
     }
   }
 
-  search() {
-
-  }
-
   render() {
     const { navbarOpen } = this.state
     return (
@@ -34,14 +30,14 @@ class Navbar extends React.Component {
           </div>
           <div className={`navbar-menu ${navbarOpen ? 'is-active' : ''}`}>
             <div className='navbar-end'>
-              <Link onClick={this.search} className='navbar-item' to='/books/romance/results'>Romance</Link>
-              <Link onClick={this.search} className='navbar-item' to='/books/thriller/results'>Thriller</Link>
-              <Link onClick={this.search} className='navbar-item' to='/books/horror/results'>Horror</Link>
-              <Link onClick={this.search} className='navbar-item' to='/books/fantasy/results'>Fantasy</Link>
-              <Link onClick={this.search} className='navbar-item' to='/books/children/results'>Children</Link>
-              <Link onClick={this.search} className='navbar-item' to='/books/Poetry/results'>Poetry</Link>
-              <Link onClick={this.search} className='navbar-item' to='/books/comedy/results'>Comedy</Link>
-              <Link onClick={this.search} className='navbar-item' to='/books/nonficton/results'>Non-fiction</Link>
+              <Link className='navbar-item' to='/books/romance/results'>Romance</Link>
+              <Link className='navbar-item' to='/books/thriller/results'>Thriller</Link>
+              <Link className='navbar-item' to='/books/horror/results'>Horror</Link>
+              <Link className='navbar-item' to='/books/fantasy/results'>Fantasy</Link>
+              <Link className='navbar-item' to='/books/children/results'>Children</Link>
+              <Link className='navbar-item' to='/books/Poetry/results'>Poetry</Link>
+              <Link className='navbar-item' to='/books/comedy/results'>Comedy</Link>
+              <Link className='navbar-item' to='/books/nonficton/results'>Non-fiction</Link>
             </div>
           </div>
         </div>

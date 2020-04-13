@@ -1,68 +1,236 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #2: Reacathon
+# <img src='readme/Query.svg' width='400'>
 
-## Overview
+<h1>General Assembly Project Two: Query</h1>
 
-The second project is to **build a React application** that consumes a **public API**.
+<h2>Goal: Within a team of two, build a React application that consumes a public API</h2>
 
-### Technical Requirements
+| Contents                      |                |
+| ------------------------------|----------------|
+|1. [Overview](#overview)       |6. [Future content](#future)
+|2. [Brief](#brief)             |7. [Wins](#wins)
+|3. [Technologies used](#tech)  |8. [Blockers](#blockers)
+|4. [App](#app)                 |9. [Bugs](#bugs)
+|5. [Approach](#approach)       |10. [Future learnings](#learn)
 
-Your app must:
+<h2 name='overview'>Overview</h2>
+
+<h3>Introduction</h3>
+
+Query is an app that allows the user to search for any book in googles archive. The books will appear in pages allowing the user to click on them for further information. The user may also search for a book by its genre.
+
+<h3>Deployment</h3>
+
+The app is deployed on Heroku and can be found here: https://books-ga.herokuapp.com <br>
+
+<h3>Team</h3>
+
+• <a href='https://www.linkedin.com/in/clare-robertson-ab1ba0142/'>Clare Robertson</a> <br>
+
+<h3>My contributions</h3>
+
+• Pagination<br>
+• Search bar<br>
+• Books on home page<br>
+• Background image and logo<br>
+
+<h3>Timeframe</h3>
+
+2 days
+
+<h2 name='brief'>Brief</h2>
 
 * **Consume a public API** – this could be anything but it must make sense for your project.
 * **Have several components** - At least one classical and one functional.
 * **The app should include a router** - with several "pages".
 * **Include wireframes** - that you designed before building the app.
-* Have **semantically clean HTML** - you make sure you write HTML that makes structural sense rather than thinking about how it might look, which is the job of CSS.
-* **Be deployed online** and accessible to the public.
+* **Have semantically clean HTML**
+* **Be deployed online**
 
----
+<h2 name='tech'>Technologies used</h2>
+<p>1. HTML5 <br>
+2. SCSS & Bulma <br>
+3. JavaScript (ES6) <br>
+4. JSON <br>
+5. React.js <br>
+6. Node.js <br>
+7. Express.js <br>
+8. Axios <br>
+9. Insomnia <br>
+10. Dotenv <br>
+11. Google Books API <br>
+12. Mapbox <br>
+13. Z shell <br>
+14. GitHub <br></p>
 
-## Necessary Deliverables
+<h2 name='app'>App</h2>
 
-* A **working application**, hosted somewhere on the internet
-* A **link to your hosted working app** in the URL section of your Github repo
-* A **git repository hosted on Github**, with a link to your hosted project, and frequent commits dating back to the _very beginning_ of the project
+The user can start by typing in the search bar the name or author of the book, and the most relevant results will appear. Once the user finds their book they can click on its card to take them to its info page.<br>
+<br>
+<br>
+<img src='readme/search.gif' width='600'>
+<br>
+<br>
+<br>
+Another way to search would be by genre and we have given a few of the most common in the Navbar<br>
+<br>
+<br>
+<img src='readme/NavbarSearch.gif' width='600'>
+<br>
+<br>
+<br>
+Finally a selection of 5 random books are loaded into the home page that the use can click to view.<br>
+<br>
+<br>
+<img src='readme/Home2.png' width='600'>
+<br>
+<br>
+<br>
+<h2 name='future'>Future content</h2>
+<h3>Take a look</h3>
+The Google Books API allows for selected books to be partly or fully read. I would like to incorporate this via a button on the books info page.
+<br>
+<br>
+<br>
+<h2 name='wins'>Wins</h2>
+<h3>Pagination</h3>
+Solving the pagination issue was really satisfying as the Google documentation does not specifically state how to use it, it just states:
+You can paginate the volumes list by specifying two values in the parameters for the request:
 
----
+startIndex - The position in the collection at which to start. The index of the first item is 0.
+maxResults - The maximum number of results to return. The default is 10, and the maximum allowable value is 40.
 
-## Suggested Ways to Get Started
-
-* **Don’t hesitate to write throwaway code** to solve short term problems.
-* **Read the docs for whatever technologies / frameworks / APIs you use**.
-* **Write DRY code**.
-* **Be consistent with your code style.**
-* **Commit early, commit often.** Don’t be afraid to break something because you can always go back in time to a previous version.
-* **Keep user stories small and well-defined**, and remember – user stories focus on what a user needs, not what development tasks need accomplishing.
-* **Write code another developer wouldn't have to ask you about**. Do your naming conventions make sense? Would another developer be able to look at your app and understand what everything is?
-* **Make it all well-formatted.** Are you indenting, consistently? Can we find the start and end of every div, curly brace, etc?
-* **Comment your code.** Will someone understand what is going on in each block or function? Even if it's obvious, explaining the what & why means someone else can pick it up and get it.
-* **Write pseudocode before you write actual code.** Thinking through the logic of something helps.
-
----
-
-## Useful Resources
-
-* [List of open APIs](https://any-api.com/)
-
-* [A collective list of free APIs for use in software and web development.](https://github.com/public-apis/public-apis)
-
-* [18 Fun APIs For Your Next Project - Victoria Bergquist - Medium](https://medium.com/@vicbergquist/18-fun-apis-for-your-next-project-8008841c7be9)
-
-* [Best Free APIs of 2019](https://rapidapi.com/collection/best-free-apis?utm_source=google&utm_medium=cpc&utm_campaign=1757574668_67679208454&utm_term=%2Bfree%20%2Bapis_b&utm_content=1t1&gclid=CjwKCAiAgqDxBRBTEiwA59eENwNUVqPD-v79Cgwl3EWtcRuMZlVGOCxAf5RcH74ZUM6cMKp6o5FZRxoCpVgQAvD_BwE)
+So I decided to increase or decrease the index by 40 everytime the user clicked next or back, meaning the next 40 books would be loaded.
 
 
-These are just a few examples of lists of free APIs you could use, there are hundreds out there!
+```javascript
+  state = {
+    data: [],
+    search: '',
+    index: 0
+  }
 
----
+  componentDidMount() {
+    this.findBooks()
+  }
 
-## Project Feedback + Evaluation
+  findBooks = async () => {
+    const search = this.props.match.params.search
+    const index = this.state.index
+    try {
+      const res = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${search}&maxResults=40&startIndex=${index}`)
+      this.setState({ data: res.data.items })
+      this.setState({ search }) 
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
-* __Project Workflow__: Did you complete the user stories, wireframes, task tracking as specified above? Did you use source control as expected for the phase of the program you’re in (detailed above)?
+  next = () => {
+    let newIndex = this.state.index
+    const next = newIndex += 40
+    this.setState({ index: next })
+    this.findBooks()
+  }
 
-* __Technical Requirements__: Did you deliver a project that met all the technical requirements? Given what the class has covered so far, did you build something that was reasonably complex?
+  back = () => {
+    let index = this.state.index
+    const back = index -= 40
+    this.setState({ index: back })
+    this.findBooks()
+  }
+```
+<br>
+<br>
+<br>
+<h3>Homepage books</h3>
+This part was really fun for me as I grasped the concept of concatenation and mapping the results of an api request. Meaning I could display five books from 6 categories that link to their info pages and have them change randomly.
 
-* __Creativity__: Did you added a personal spin or creative element into your project submission? Did you deliver something of value to the end user (not just a login button and an index page)?
+```javascript
+  state = {
+    volumeInfo: '',
+    homeCategory: '',
+    id: []
+  }
 
-* __Code Quality__: Did you follow code style guidance and best practices covered in class, such as spacing, modularity, and semantic naming? Did you comment your code as your instructors as we have in class?
+  randomCats = [
+    'novels',
+    'non-fiction',
+    'software',
+    'history',
+    'young-fiction',
+    'travel'
+  ]
+  
+  async componentDidMount() {
+    try {
+      const i = Math.floor(Math.random() * this.randomCats.length)
+      const res = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=asubject:${this.randomCats[i]}&maxResults=4`)
+      const info = res.data.items
+      let usefulInfo = info.map(item => (
+        item.volumeInfo.imageLinks
+      ))
+      usefulInfo = usefulInfo.filter(item => item)
+      this.setState({ volumeInfo: usefulInfo, id: info })
 
-* __Problem Solving__: Are you able to defend why you implemented your solution in a certain way? Can you demonstrated that you thought through alternative implementations? _(Note that this part of your feedback evaluation will take place during your one-on-one code review with your instructors, after you've completed the project.)_
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+
+  render() {
+    if (!this.state.volumeInfo) return null
+    return (
+      <section className='hero is-fullheight-with-navbar'>
+        <div className='hero-body'>
+          <div className='container'>
+            <Searchbr history={this.props.history} />
+            <div className='display'>
+              {this.state.volumeInfo.map((image, i) => (
+                <Link key={i} to={`/books/1/results/${this.state.id[i].id}`} >
+                  <img key={i} src={image.thumbnail} className='homebooks'/>
+                </Link>
+              )  
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+    )
+  }
+```
+<br>
+<br>
+<br>
+<h2 name='blockers'>Blockers</h2>
+<h3>Search bar</h3>
+The concept of sending the searched for term into the url and then separately loading the page and taking the url down to then be searched was a really unexpected way to work.
+<br>
+<br>
+<h3>Props</h3>
+Passing down the props was a tricky idea to get my head around. But realizing that you can add any props to the component and it would appear like your adding properties to an object helped me really grasp how React worked
+<br>
+<br>
+<br>
+<h2 name='bugs'>Bugs</h2>
+<h3>Pagination</h3>
+When trying to click the next button, the first time it is clicked the new books do not appear. The index changes but the pages do not re-render. This means the user must click it twice for the page to re-render.<br>
+<br>
+<br>
+<img src='readme/paginationBug.gif' width='600'>
+<br>
+<br>
+<h3>Navbar</h3>
+The navbar does not work when used on the results page. The url is changed but the page does not reload. I think this is because the actual component is not changing and therefore the url is not searched.
+<br>
+<br>
+<h3>Logo</h3>
+The logos link will break after interacting with the sight for a while.
+<br>
+<br>
+<h3>Info paragraph</h3>
+When the books info page is loaded, often some inline html will be included with the paragraph.
+<h2 name='learn'>Future learnings</h2>
+• Learn how to work with a searchbar<br>
+• Learn how to remove html from text<br>
