@@ -60,6 +60,8 @@ The app is deployed on Heroku and can be found here: https://books-ga.herokuapp.
 11. Google Books API <br>
 12. Mapbox <br>
 13. Z shell <br>
+14. NPM <br>
+15. Heroku <br>
 14. GitHub <br></p>
 
 <h2 name='app'>App</h2>
